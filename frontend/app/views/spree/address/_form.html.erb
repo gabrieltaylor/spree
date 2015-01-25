@@ -35,10 +35,11 @@
 
   <% if Spree::Config[:address_requires_state] %>
     <p class="form-group" id=<%="#{address_id}state" %>>
-      <% have_states = !address.country.states.empty? %>
+      <% have_states = !(address.country.nil? or address.country.states.empty?) %>
       <%= form.label :state, Spree.t(:state) %><span class='required' id=<%="#{address_id}state-required"%>>*</span><br/>
 
-      <% state_elements = [
+      <% if have_states %>
+        <% state_elements = [
          form.collection_select(:state_id, address.country.states,
                             :id, :name,
                             {:include_blank => true},
@@ -48,7 +49,10 @@
                             :class => !have_states ? 'form-control required' : 'form-control hidden',
                             :disabled => have_states)
          ].join.gsub('"', "'").gsub("\n", "")
-      %>
+        %>
+      <% else %>
+       <% state_elements = [] %>
+      <% end %>
       <%= javascript_tag do -%>
         $('#<%="#{address_id}state" %>').append("<%== state_elements %>");
       <% end %>

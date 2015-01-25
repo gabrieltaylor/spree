@@ -1152,6 +1152,7 @@ en:
     searching: Searching
     secure_connection_type: Secure Connection Type
     security_settings: Security Settings
+    secret_key: Secret Key
     select: Select
     select_from_prototype: Select From Prototype
     select_a_return_authorization_reason: Select a reason for the return authorization
