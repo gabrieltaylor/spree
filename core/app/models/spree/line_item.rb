@@ -17,7 +17,7 @@ module Spree
     validates :quantity, numericality: {
       only_integer: true,
       greater_than: -1,
-      message: Spree.t('validation.must_be_int')
+      message: "must be an integer"
     }
     validates :price, numericality: true
     validates_with Stock::AvailabilityValidator
