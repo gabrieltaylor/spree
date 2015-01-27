@@ -861,6 +861,7 @@ en:
     new_payment: New Payment
     new_payment_method: New Payment Method
     new_product: New Product
+    new_product_customization_type: New product customization type
     new_promotion: New Promotion
     new_promotion_category: New Promotion Category
     new_property: New Property
@@ -1033,6 +1034,7 @@ en:
     price_sack: Price Sack
     process: Process
     product: Product
+    product_customization_types: Product customization types
     product_details: Product Details
     product_has_no_description: This product has no description
     product_not_available_in_this_currency: This product is not available in the selected currency.
