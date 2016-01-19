@@ -11,7 +11,7 @@ RUN apt-get install -y -q \
     wget \
     curl \
     git \
-    openssl \
+    openssl
 
 # Install packages for ruby
 RUN apt-get install -y -q \
