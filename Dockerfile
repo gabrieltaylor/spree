@@ -30,8 +30,7 @@ RUN apt-get install -y \
 
 # Install packages for postgresql
 RUN apt-get install -y -q \
-    libpq-dev \
-    postgresql-server-dev-9.4
+    postgresql
 
 # Install packages for MySQL
 RUN apt-get install -y -q mysql-server mysql-client libmysqlclient-dev
