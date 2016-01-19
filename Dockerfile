@@ -7,7 +7,11 @@ RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
 # Install Nokogiri
 # RUN apt-get install -y zlib1g-dev
 
-RUN apt-get install -y zlib1g zlib1g-dev build-essential sqlite3 libsqlite3-dev openssl libssl-dev libyaml-dev libreadline-dev libxml2-dev libxslt1-dev mysql-server mysql-client libmysqlclient-dev
+RUN apt-get install -y zlib1g zlib1g-dev build-essential sqlite3 libsqlite3-dev openssl libssl-dev libyaml-dev libreadline-dev libxml2-dev libxslt1-dev
+
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get -y -q mysql-server mysql-client libmysqlclient-dev
 
 RUN mkdir /spree
 WORKDIR /tmp
