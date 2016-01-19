@@ -11,7 +11,7 @@ RUN mkdir /spree
 WORKDIR /tmp
 COPY . /tmp
 
-RUN bundle install --deployment --jobs 4
+RUN bundle install --jobs 4
 
 ADD . /spree
 WORKDIR /spree
