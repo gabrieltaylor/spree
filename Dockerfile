@@ -1,16 +1,12 @@
 FROM ruby:2.2.0
+
+# Update package list
 RUN apt-get update -qq
-
-# Install RMagick
-# RUN apt-get install -y libmagickwand-dev imagemagick
-
-# Install Nokogiri
-# RUN apt-get install -y zlib1g-dev
 
 ENV DEBIAN_FRONTEND noninteractive
 
 # Install basic dev tools
-RUN apt-get update && apt-get install -y -q \
+RUN apt-get install -y -q \
     build-essential \
     wget \
     curl \
