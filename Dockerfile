@@ -11,7 +11,7 @@ RUN apt-get install -y zlib1g zlib1g-dev build-essential sqlite3 libsqlite3-dev 
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get -y -q mysql-server mysql-client libmysqlclient-dev
+RUN apt-get install -y -q mysql-server mysql-client libmysqlclient-dev
 
 RUN mkdir /spree
 WORKDIR /tmp
