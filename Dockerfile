@@ -24,7 +24,7 @@ RUN apt-get install -y -q \
     libxslt-dev
 
 # Install package for sqlite3
-RUN apt-get install -y -q \
+RUN apt-get install -y \
     sqlite3 \
     libsqlite3-dev
 
