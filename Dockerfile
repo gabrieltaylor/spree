@@ -14,7 +14,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get install -y -q mysql-server mysql-client libmysqlclient-dev
 
 # Install Postgres gem dependencies
-RUN apt-get install -y libpq-dev build-essential postgresql-server-dev-9.4
+RUN apt-get install -y libpq-dev postgresql-server-dev-9.4
 
 RUN mkdir /spree
 WORKDIR /tmp
