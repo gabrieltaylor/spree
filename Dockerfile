@@ -1,4 +1,4 @@
-FROM ruby:2.2.0
+FROM ubuntu:14.04
 
 # Update package list
 RUN apt-get update -qq
