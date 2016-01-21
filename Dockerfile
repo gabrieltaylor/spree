@@ -11,7 +11,8 @@ RUN apt-get install -y -q \
     wget \
     curl \
     git \
-    openssl
+    openssl \
+    software-properties-common
 
 # Install packages for ruby
 RUN apt-get install -y -q \
@@ -51,7 +52,8 @@ RUN apt-get install -y \
 
 # Install packages for postgresql
 RUN apt-get install -y -q \
-    postgresql
+    postgresql \
+    postgresql-server-dev-9.4
 
 # Install packages for MySQL
 RUN apt-get install -y -q mysql-server mysql-client libmysqlclient-dev
