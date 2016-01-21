@@ -51,9 +51,19 @@ RUN apt-get install -y \
     libsqlite3-dev
 
 # Install packages for postgresql
-RUN apt-get install -y -q \
-    postgresql \
-    postgresql-server-dev-9.4
+#RUN apt-get install -y -q \
+#    postgresql \
+#    postgresql-server-dev-9.4
+
+## Install PostgreSQL, after install this should work: psql --host=127.0.0.1 roottestdb
+RUN apt-get install -y postgresql
+RUN cat /dev/null > /etc/postgresql/9.3/main/pg_hba.conf
+RUN echo "# TYPE DATABASE USER ADDRESS METHOD" >> /etc/postgresql/9.3/main/pg_hba.conf
+RUN echo "local  all  all  trust" >> /etc/postgresql/9.3/main/pg_hba.conf
+RUN echo "host all all 127.0.0.1/32 trust" >> /etc/postgresql/9.3/main/pg_hba.conf
+RUN echo "host all all  ::1/128 trust" >> /etc/postgresql/9.3/main/pg_hba.conf
+RUN /etc/init.d/postgresql start && su postgres -c "psql -c \"create user root;\"" && su postgres -c "psql -c \"alter user root createdb;\"" && su postgres -c "psql -c \"create database roottestdb owner root;\""
+#
 
 # Install packages for MySQL
 RUN apt-get install -y -q mysql-server mysql-client libmysqlclient-dev
