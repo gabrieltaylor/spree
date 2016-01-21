@@ -55,7 +55,8 @@ RUN apt-get install -y \
 #    postgresql-server-dev-9.4
 
 ## Install PostgreSQL, after install this should work: psql --host=127.0.0.1 roottestdb
-RUN apt-get install -y postgresql
+RUN apt-get install -y postgresql \
+    postgresql-9.4
 RUN cat /dev/null > /etc/postgresql/9.3/main/pg_hba.conf
 RUN echo "# TYPE DATABASE USER ADDRESS METHOD" >> /etc/postgresql/9.3/main/pg_hba.conf
 RUN echo "local  all  all  trust" >> /etc/postgresql/9.3/main/pg_hba.conf
